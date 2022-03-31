@@ -11,22 +11,17 @@ import { PokemonService } from './services/pokemon.service';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    PokemonListComponent,
-    PokemonDetailComponent
-  ],
+  declarations: [AppComponent, PokemonListComponent, PokemonDetailComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MaterialModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [PokemonService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

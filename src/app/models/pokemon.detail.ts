@@ -37,6 +37,11 @@ class Type {
 
 class Sprite {
   front_default!: string;
+  other: {
+    dream_world: {
+      front_default: string;
+    };
+  } | undefined
 }
 
 class Stat {
