@@ -16,7 +16,7 @@ import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.compone
 export class PokemonListComponent implements OnInit {
   search: FormControl = new FormControl('');
   pokemons: PokemonDetail[] = [];
-  classicMode: boolean = true;
+  classicMode: boolean = false;
 
   private offset: number;
   isLoading!: boolean;
@@ -91,7 +91,7 @@ export class PokemonListComponent implements OnInit {
       arr.push(this.pokemonService.getPokemonDetail(value.name));
     });
 
-    forkJoin([...arr]).subscribe((pokemons: any []) =>  {
+    forkJoin([...arr]).subscribe((pokemons: any[]) => {
       this.pokemons.push(...pokemons);
       this.offset += 20;
       this.isLoading = false;

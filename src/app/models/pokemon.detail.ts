@@ -9,6 +9,7 @@ export class PokemonDetail {
   weight!: number;
   sprites!: Sprite;
   stats!: Stat[];
+  forms!: PokemonForm;
 
   constructor() {
     this.abilities = [];
@@ -37,11 +38,13 @@ class Type {
 
 class Sprite {
   front_default!: string;
-  other: {
-    dream_world: {
-      front_default: string;
-    };
-  } | undefined
+  other:
+    | {
+        dream_world: {
+          front_default: string;
+        };
+      }
+    | undefined;
 }
 
 class Stat {
@@ -49,4 +52,8 @@ class Stat {
   stat!: {
     name: string;
   };
+}
+
+class PokemonForm {
+  names!: string;
 }

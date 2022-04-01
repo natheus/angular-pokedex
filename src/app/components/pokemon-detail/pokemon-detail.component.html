@@ -15,13 +15,13 @@
   <mat-tab label="About">
     <div class="sheet-tab">
       <div class="sheet-item">
-        <div class="color-gray sheet-item-label">Height:</div>
-        <div class="color-gray sheet-item-label">Weight:</div>
-        <div class="color-gray sheet-item-label">Abilities:</div>
+        <div class="color-black  sheet-item-label">Height:</div>
+        <div class="color-black  sheet-item-label">Weight:</div>
+        <div class="color-black  sheet-item-label">Abilities:</div>
       </div>
       <div class="sheet-item">
-        <div>{{ pokemon.height }}</div>
-        <div>{{ pokemon.weight }}</div>
+        <div>{{ pokemon.height / 10 }} m</div>
+        <div>{{ pokemon.weight / 10}} kg</div>
         <div>{{ getAbilities() }}</div>
       </div>
     </div>
@@ -31,7 +31,7 @@
     <div class="sheet-tab">
       <div class="sheet-item w-100">
         <div class="sheet-progress w-100">
-          <div class="w-20 color-gray sheet-item-label">HP:</div>
+          <div class="w-20 color-black  sheet-item-label">HP:</div>
           <div class="w-80">
             <app-progress-bar
               [color]="getPrincipalType(pokemon.types)"
@@ -41,7 +41,7 @@
         </div>
 
         <div class="sheet-progress w-100">
-          <div class="w-20 color-gray sheet-item-label">Attack:</div>
+          <div class="w-20 color-black sheet-item-label">Attack:</div>
           <div class="w-80">
             <app-progress-bar
               [color]="getPrincipalType(pokemon.types)"
@@ -51,7 +51,7 @@
         </div>
 
         <div class="sheet-progress w-100">
-          <div class="w-20 color-gray sheet-item-label">Defense:</div>
+          <div class="w-20 color-black  sheet-item-label">Defense:</div>
           <div class="w-80">
             <app-progress-bar
               [color]="getPrincipalType(pokemon.types)"
@@ -61,7 +61,7 @@
         </div>
 
         <div class="sheet-progress w-100">
-          <div class="w-20 color-gray sheet-item-label">Sp. Attack:</div>
+          <div class="w-20 color-black  sheet-item-label">Sp. Attack:</div>
           <div class="w-80">
             <app-progress-bar
               [color]="getPrincipalType(pokemon.types)"
@@ -71,7 +71,7 @@
         </div>
 
         <div class="sheet-progress w-100">
-          <div class="w-20 color-gray sheet-item-label">Sp. Defense:</div>
+          <div class="w-20 color-black  sheet-item-label">Sp. Defense:</div>
           <div class="w-80">
             <app-progress-bar
               [color]="getPrincipalType(pokemon.types)"
@@ -81,7 +81,7 @@
         </div>
 
         <div class="sheet-progress w-100">
-          <div class="w-20 color-gray sheet-item-label">Speed:</div>
+          <div class="w-20 color-black  sheet-item-label">Speed:</div>
           <div class="w-80">
             <app-progress-bar
               [color]="getPrincipalType(pokemon.types)"
