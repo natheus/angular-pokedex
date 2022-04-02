@@ -55,7 +55,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   onSearchPokemon(): void {
-    const value = this.search.value;
+    const value = this.search.value.toLowerCase();
     if (value === '') {
       this.isSearching = false;
     } else {
