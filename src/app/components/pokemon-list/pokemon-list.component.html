@@ -1,19 +1,35 @@
 <div class="container-fluid">
-    <div class="header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" height="80"/>
-        <mat-form-field class="search col-sm-12 col-md-12 col-lg-8 col-xl-8" floatLabel="always">
-            <mat-label>Pokemon name</mat-label>
-            <input matInput [formControl]="search" (keydown.enter)="onSearchPokemon()" placeholder="Search">
-        </mat-form-field>
-        <section class="col-12">
-            <mat-slide-toggle
-            color="primary"
-            [checked]="classicMode"
-            (change)="classicMode = !classicMode">
-            <span style="font-weight: bold">{{classicMode ? 'Classic' : 'Gif'}}</span>
-            </mat-slide-toggle>
-        </section>
-    </div>
+  <div class="header">
+    <a href="#top">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+      height="80"
+    />
+    </a>
+    <mat-form-field
+      class="search col-sm-12 col-md-12 col-lg-8 col-xl-8"
+      floatLabel="always"
+    >
+      <mat-label>Pokemon name</mat-label>
+      <input
+        matInput
+        [formControl]="search"
+        (keydown.enter)="onSearchPokemon()"
+        placeholder="Search"
+      />
+    </mat-form-field>
+    <section class="col-12">
+      <mat-slide-toggle
+        color="primary"
+        [checked]="classicMode"
+        (change)="classicMode = !classicMode"
+      >
+        <span style="font-weight: bold">{{
+          classicMode ? "Classic" : "Gif"
+        }}</span>
+      </mat-slide-toggle>
+    </section>
+  </div>
   <div class="row justify-content-center" *ngIf="isLoading">
     <div class="col-4">
       <span>Loading.... please wait!!</span>
@@ -26,6 +42,7 @@
     (scroll)="onScroll($event)"
   >
     <div
+      id="top"
       class="col-sm-6 col-md-6 col-lg-4 col-xl-4"
       *ngFor="let pokemon of pokemons"
       (click)="onDetail(pokemon)"
@@ -35,9 +52,9 @@
           'bg-color-' + getPrincipalType(pokemon.types) + '-light'
         }}"
       >
-      <h4 class="color-white">#{{ pokemon.id }}</h4>
+        <h4 class="color-lightgray">#{{ pokemon.id }}</h4>
         <div class="card-info">
-          <h3 class="color-black"> {{ pokemon.name }}</h3>
+          <h3 class="color-black">{{ pokemon.name }}</h3>
           <span
             class="color-black {{
               'bg-color-' + getPrincipalType(pokemon.types)
@@ -75,8 +92,9 @@
           'bg-color-' + getPrincipalType(searchPokemon.types) + '-light'
         }}"
       >
+        <h4 class="color-lightgray">#{{ searchPokemon.id }}</h4>
         <div class="card-info">
-          <h2 class="color-white">{{ searchPokemon.name }}</h2>
+          <h2 class="color-black">{{ searchPokemon.name }}</h2>
           <span
             class="color-black {{
               'bg-color-' + getPrincipalType(searchPokemon.types)
@@ -87,8 +105,9 @@
         </div>
         <div class="card-img">
           <img
+            height="100"
             *ngIf="!classicMode"
-            [src]="searchPokemon.sprites?.front_default"
+            [src]="searchPokemon.sprites?.other?.dream_world?.front_default"
             [alt]="searchPokemon.name"
           />
           <img
