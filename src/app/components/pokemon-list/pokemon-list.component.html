@@ -14,7 +14,7 @@
       <input
         matInput
         [formControl]="search"
-        (change)="onSearchPokemon()"
+        (keyup)="onSearchPokemon()"
         placeholder="Search"
       />
     </mat-form-field>
