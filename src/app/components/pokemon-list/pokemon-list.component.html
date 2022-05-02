@@ -13,8 +13,9 @@
       <mat-label>Pokemon name</mat-label>
       <input
         matInput
+        ng-model="string"
         [formControl]="search"
-        (keydown.enter)="onSearchPokemon()"
+        ngChange"="onSearchPokemon()"
         placeholder="Search"
       />
     </mat-form-field>
