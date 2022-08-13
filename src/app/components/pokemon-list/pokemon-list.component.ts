@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { forkJoin, Observable } from 'rxjs';
 import { PokemonDetail } from '../../models/pokemon.detail';
 import { PokemonList } from '../../models/pokemon.list';
@@ -28,8 +27,7 @@ export class PokemonListComponent implements OnInit {
 
   constructor(
     private pokemonService: PokemonService,
-    private bottomSheet: MatBottomSheet,
-    private snackBar: MatSnackBar
+    private bottomSheet: MatBottomSheet
   ) {
     this.offset = 0;
   }
