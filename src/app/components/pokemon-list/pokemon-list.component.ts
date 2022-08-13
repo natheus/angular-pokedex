@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -21,6 +21,7 @@ export class PokemonListComponent implements OnInit {
   private offset: number;
   isLoading!: boolean;
   isLastPage = false;
+  searchText: string = '';
 
   searchPokemon: PokemonDetail = new PokemonDetail();
   isSearching = false;
@@ -51,30 +52,6 @@ export class PokemonListComponent implements OnInit {
             this.getPokemon(list);
           }
         });
-    }
-  }
-
-  onSearchPokemon(): void {
-    const value = this.search.value.toLowerCase();
-    if (value === '') {
-      this.isSearching = false;
-    } else {
-      this.isSearching = true;
-      this.isLoading = true;
-      this.pokemonService.getPokemonDetail(value).subscribe(
-        (pokemon: PokemonDetail) => {
-          this.searchPokemon = pokemon;
-          this.isLoading = false;
-        },
-        (error: any) => {
-          this.isLoading = false;
-          if (error.status === 404) {
-            this.snackBar.open('Sorry, Pokemon not found', 'Ok', {
-              duration: 5000,
-            });
-          }
-        }
-      );
     }
   }
 

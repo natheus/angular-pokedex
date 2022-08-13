@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class="header">
     <a href="#top">
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
-      height="80"
-    />
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+        height="80"
+      />
     </a>
     <mat-form-field
       class="search col-sm-12 col-md-12 col-lg-8 col-xl-8"
@@ -14,8 +14,8 @@
       <input
         matInput
         [formControl]="search"
-        (keydown.enter)="onSearchPokemon()"
-        placeholder="Search"
+        [(ngModel)]="searchText"
+        placeholder="Search 1st generation pokemon"
       />
     </mat-form-field>
     <section class="col-12">
@@ -44,7 +44,7 @@
     <div
       id="top"
       class="col-sm-6 col-md-6 col-lg-4 col-xl-4"
-      *ngFor="let pokemon of pokemons"
+      *ngFor="let pokemon of pokemons | searchFilter: searchText"
       (click)="onDetail(pokemon)"
     >
       <div
@@ -67,7 +67,7 @@
           <img
             height="100"
             *ngIf="!classicMode"
-            [src]="pokemon.sprites?.other?.dream_world?.front_default"
+            [src]="pokemon.sprites.other?.dream_world?.front_default"
             [alt]="pokemon.name"
           />
           <img

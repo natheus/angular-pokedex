@@ -10,9 +10,15 @@ import { SharedModule } from './shared/shared.module';
 import { PokemonService } from './services/pokemon.service';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
+import {  SearchFilterPipe } from './components/pokemon-list/filter.pipe';
 
 @NgModule({
-  declarations: [AppComponent, PokemonListComponent, PokemonDetailComponent],
+  declarations: [
+    AppComponent,
+    PokemonListComponent,
+    PokemonDetailComponent,
+    SearchFilterPipe,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
