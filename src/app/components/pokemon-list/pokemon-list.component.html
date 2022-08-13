@@ -11,12 +11,15 @@
       floatLabel="always"
     >
       <mat-label>Pokemon name</mat-label>
-      <input
-        matInput
-        [formControl]="search"
-        [(ngModel)]="searchText"
-        placeholder="Search 1st generation pokemon"
-      />
+      <div class="input-group rounded">
+        <input
+          type="search"
+          class="form-control rounded"
+          placeholder="Search 1st generation pokemon"
+          [formControl]="search"
+          [(ngModel)]="searchText"
+        />
+      </div>
     </mat-form-field>
     <section class="col-12">
       <mat-slide-toggle
