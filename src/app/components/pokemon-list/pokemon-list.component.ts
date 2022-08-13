@@ -68,7 +68,7 @@ export class PokemonListComponent implements OnInit {
 
     forkJoin([...arr]).subscribe((pokemons: any[]) => {
       this.pokemons.push(...pokemons);
-      this.offset += 20;
+      this.offset += 151;
       this.isLoading = false;
     });
   }
