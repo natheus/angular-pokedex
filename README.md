@@ -1,6 +1,4 @@
 # Pokedex
-
-## 🚧 [In progress]
 Search for your favorite Pokémon basic info.
 
 [Check out the Website](https://angular-pokedex-natheus.vercel.app/).
@@ -10,11 +8,11 @@ Leave a 🌟 if you liked it. That would make my day 😊.
 
 ### SVG
 
-<img src="https://user-images.githubusercontent.com/94872601/161548315-3aae85dd-c367-4c16-a404-66a23f9cc394.png"/>
+<img src="https://user-images.githubusercontent.com/94872601/184502459-e10abf6b-2a8d-484e-ae5d-d20e5d0f1877.png"/>
 
 ### GIF
 
-<img src="https://user-images.githubusercontent.com/94872601/161553515-f118adb1-e3c0-4d0b-9c7d-dfb1f3dea89e.gif"/>
+<img src="https://user-images.githubusercontent.com/94872601/184502674-0b119ca9-e00c-4eb3-b64f-ee4cb9b636e8.gif"/>
 
 ## 🔥 Open API
 
